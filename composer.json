@@ -8,6 +8,19 @@
         "phpunit/phpunit": "^7.5"
     },
     "license": "BSD",
+    "autoload": {
+        "psr-4": {
+            "Bonuses\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit -c ."
+    },
     "authors": [
         {
             "name": "miholeus",
