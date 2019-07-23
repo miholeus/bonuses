@@ -1,0 +1,17 @@
+{
+    "name": "miholeus/bonuses",
+    "description": "Salary of employees",
+    "require": {
+        "symfony/console": "^4.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.5"
+    },
+    "license": "BSD",
+    "authors": [
+        {
+            "name": "miholeus",
+            "email": "me@miholeus.com"
+        }
+    ]
+}
