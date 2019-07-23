@@ -14,6 +14,8 @@ class Payroll
     }
 
     /**
+     * Calculate salary for employee
+     *
      * @param Employee $employee
      * @return Money
      */

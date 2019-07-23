@@ -27,16 +27,6 @@ class PayrollManager implements PayrollManagerInterface
     protected $availableBonuses = [CarBonus::class, FiftyYearsBonus::class];
 
     /**
-     * @var TaxInterface[]
-     */
-    private $taxes = [];
-
-    /**
-     * @var BonusInterface[]
-     */
-    private $bonuses = [];
-
-    /**
      * Total amount that will be added to salary
      *
      * @var
@@ -108,10 +98,21 @@ class PayrollManager implements PayrollManagerInterface
         return $money;
     }
 
+    /**
+     * Calculate percents
+     *
+     * @param Money $money
+     * @param float $percentage
+     * @return Money
+     */
     protected function applyPercentToMoney(Money $money, float $percentage): Money
     {
         $amount = $money->getStorableAmount();
-        $value = $percentage*100*$amount/10000;
+        /*
+         * everything less than 1 cent is removed
+         * for more precision, just simply increase "precision" in money
+         */
+        $value = intval($percentage*100*$amount/10000);
         return Money::createFromStorable($value + $amount);
     }
 
@@ -128,6 +129,12 @@ class PayrollManager implements PayrollManagerInterface
         return $this->currency;
     }
 
+    /**
+     * Calculate salary
+     *
+     * @param Employee $employee
+     * @return Money|mixed
+     */
     public function calculate(Employee $employee)
     {
         $amount = $this->getSalary();
