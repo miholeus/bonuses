@@ -7,7 +7,7 @@ use Bonuses\Model\Money;
 use Bonuses\Model\Payroll;
 use Bonuses\Model\PayrollManager;
 
-class SalaryCalculatorTest extends \PHPUnit\Framework\TestCase
+class PayrollTest extends \PHPUnit\Framework\TestCase
 {
     public function salaryProvider()
     {

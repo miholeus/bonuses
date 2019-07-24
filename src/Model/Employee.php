@@ -35,6 +35,9 @@ class Employee
 
     public function __construct(string $name, int $age, int $kids = 0, bool $companyCar = false)
     {
+        if ($kids < 0) {
+            throw new \LogicException("Employee can't have negative kids number");
+        }
         $this->name = $name;
         $this->age = $age;
         $this->kids = $kids;

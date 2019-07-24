@@ -2,7 +2,7 @@ version: "3"
 
 services:
   php:
-    image: php:7.1-cli
+    image: miholeus/php71:development
     tty: true
     volumes:
       - ./:/app:delegated
