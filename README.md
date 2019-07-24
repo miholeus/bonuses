@@ -1,6 +1,8 @@
 Employees Bonuses and Deductions
 =========
 
+[![Build Status](https://travis-ci.org/miholeus/bonuses.svg?branch=master)](https://travis-ci.org/miholeus/bonuses)
+
 Installation
 ===
 Run docker
